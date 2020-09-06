@@ -46,11 +46,12 @@ body {
 }
 
 ul.currencies {
-    height: 500px;
+    height: calc(100vh - 40px - 100px - 40px - 57px);
     background-color: #222;
     padding: 0 1.5rem 1rem 1.5rem;
     list-style: none;
     padding: 0 1.5rem 1rem 1.5rem;
+    overflow-y: auto;
 }
 
 ul.currencies li {
@@ -71,6 +72,8 @@ ul.currencies li.base-currency {
 
 .flag {
     vertical-align: top;
+    width: 40px;
+    height: 40px;
 }
 
 .info {
@@ -115,6 +118,11 @@ ul.currencies li .close {
     padding: 0 .5rem;
     font-size: 1.5rem;
     color: #666;
+    cursor: pointer;
+}
+
+ul.currencies li .close:hover {
+    color: #ffffff;
 }
 
 .add-currency-btn {
@@ -129,7 +137,14 @@ ul.currencies li .close {
     width: 100%;
     cursor: pointer;
     transition: background-color 0.25s;
+    z-index: 15;
 }
 
+ul.currencies::-webkit-scrollbar {
+    width: 5px;
+}
 
-/*-------20,19-----*/
+ul.currencies::-webkit-scrollbar-thumb {
+    background-color: #2d2d37;
+    border-bottom: 1rem solid #222;
+}
