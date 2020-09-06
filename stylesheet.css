@@ -57,6 +57,64 @@ ul.currencies li {
     background-color: #555555;
     border-radius: 5px;
     padding: 1rem 1rem .75rem 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+ul.currencies li:last-child {
+    margin-bottom: 0;
+}
+
+ul.currencies li.base-currency {
+    background-color: #264d73;
+}
+
+.flag {
+    vertical-align: top;
+}
+
+.info {
+    display: inline-block;
+    width: 78%;
+}
+
+.info .input span {
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 4rem;
+    text-align: center;
+}
+
+.info .input input {
+    font-size: 1.5rem;
+    width: 78%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.3rem;
+    margin-bottom: .75rem;
+}
+
+.info .currency-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-left: 4rem;
+}
+
+.info .base-currency-rate {
+    font-size: 0.8rem;
+    margin-left: 4rem;
+}
+
+ul.currencies li .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 .5rem;
+    font-size: 1.5rem;
+    color: #666;
 }
 
 .add-currency-btn {
@@ -72,3 +130,6 @@ ul.currencies li {
     cursor: pointer;
     transition: background-color 0.25s;
 }
+
+
+/*-------20,19-----*/
