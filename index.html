@@ -7,6 +7,7 @@
     <title>Currency App</title>
 
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://kit.fontawesome.com/3000197507.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
             </li>
             <!----------------SWISS FRANC--------------->
             <li class="currency base-currency" id="USD">
-                <img src="https://img.icons8.com/color/48/000000/sweden.png" class="flag" alt="USA flag.">
+                <img src="https://img.icons8.com/color/48/000000/switzerland.png" class="flag" alt="USA flag.">
                 <div class="info">
                     <p class="input"> <span class="currency-symbol">&#8355;</span><input placeholder="0.0000" type="text"></p>
                     <p class="currency-name">CHF - Swiss Franc</p>
@@ -96,9 +97,36 @@
                 </div>
                 <span class="close">&times;</span>
             </li>
+            <!----------------RUSSIAN RUBLE--------------->
+            <li class="currency base-currency" id="USD">
+                <img src="https://img.icons8.com/color/48/000000/russian-federation.png" class="flag" alt="USA flag.">
+                <div class="info">
+                    <p class="input"> <span class="currency-symbol">&#8381;</span><input placeholder="0.0000" type="text"></p>
+                    <p class="currency-name">RUB - Russian Ruble</p>
+                    <p class="base-currency-rate">1 USD = 75.3555 RUB</p>
+                </div>
+                <span class="close">&times;</span>
+            </li>
+            <!----------------CHINESE YUAN--------------->
+            <li class="currency base-currency" id="USD">
+                <img src="https://img.icons8.com/color/48/000000/china.png" class="flag" alt="USA flag.">
+                <div class="info">
+                    <p class="input"> <span class="currency-symbol">&#165;</span><input placeholder="0.0000" type="text"></p>
+                    <p class="currency-name">CNY - Chinese Yuan</p>
+                    <p class="base-currency-rate">1 USD = 6.8425 CNY</p>
+                </div>
+                <span class="close">&times;</span>
+            </li>
         </ul>
-        <ul class="add-currency-list"></ul>
-        <button class="add-currency-btn">Add Currency</button>
+        <button class="add-currency-btn "><i class="fas fa-arrow-left"></i>ADD CURRENCY</button>
+        <ul class="add-currency-list">
+            <li data-currency="USD" class="disabled"><img src="https://img.icons8.com/color/48/000000/usa.png" class="flag" alt="USA flag."><span>USD - US Dollar</span></li>
+            <li data-currency="NZD"><img src="https://img.icons8.com/color/48/000000/new-zealand.png" class="flag" alt="New Zealand flag."><span>NZD - New Zealand Dollar</span></li>
+            <li data-currency="INR"><img src="https://img.icons8.com/color/48/000000/india.png" class="flag" alt="India flag."><span>INR - Indian Rupee</span></li>
+            <li data-currency="ZAR"><img src="https://img.icons8.com/color/48/000000/south-africa.png" class="flag" alt="SA flag."><span>ZAR - South African Rand</span></li>
+            <li data-currency="SEK"><img src="https://img.icons8.com/color/48/000000/sweden.png" class="flag" alt="SA flag."><span>SEK - Swedish Krona</span></li>
+        </ul>
+
 
     </div>
 
