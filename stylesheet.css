@@ -30,7 +30,7 @@ body {
 /*--------------------------TOP SECTION--------------------*/
 
 .header {
-    background-color: #4fb415;
+    background-color: #1e1e1e;
     text-align: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -40,12 +40,12 @@ body {
 .header h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 2.20rem;
-    color: #ffffff;
+    color: #4fb415;
 }
 
 .date {
-    background-color: #285c0a;
-    color: #fff;
+    background-color: #141414;
+    color: #285c0a;
     text-align: right;
     font-family: 'Open Sans', sans-serif;
     font-size: .75rem;
@@ -63,7 +63,7 @@ p {
 
 ul.currencies {
     height: calc(100vh - 40px - 100px - 40px - 57px);
-    background-color: #e0e0e0;
+    background-color: #141414;
     padding: 0 1.5rem 1rem 1.5rem;
     list-style: none;
     padding: 0 1.5rem 1rem 1.5rem;
@@ -71,7 +71,7 @@ ul.currencies {
 }
 
 ul.currencies li {
-    background-color: #808080;
+    background-color: #929292;
     border-radius: 5px;
     padding: 1rem 1rem .75rem 1rem;
     margin-bottom: 1rem;
@@ -83,7 +83,7 @@ ul.currencies li:last-child {
 }
 
 ul.currencies li.base-currency {
-    background-color: #172A3A;
+    background-color: #285c0a;
 }
 
 .flag {
@@ -142,8 +142,11 @@ ul.currencies li .close:hover {
     color: #ffffff;
 }
 
+
+/*------------------------BUTTON----------------*/
+
 .add-currency-btn {
-    background-color: #F09937;
+    background-color: #3c880f;
     color: #fff;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -160,11 +163,11 @@ ul.currencies li .close:hover {
 }
 
 .add-currency-btn:hover {
-    background-color: #cf8530;
+    background-color: #4fb415;
 }
 
 .add-currency-btn.open {
-    background-color: #0170E2;
+    background-color: #db8f00;
 }
 
 .add-currency-btn.open+ul.add-currency-list {
@@ -174,6 +177,9 @@ ul.currencies li .close:hover {
 .add-currency-btn.open+ul.add-currency-list li:hover {
     background-color: #ddd;
 }
+
+
+/*--------------------------ARROW BUTTON---------------------------*/
 
 .add-currency-btn.open i {
     opacity: 1;
@@ -188,6 +194,9 @@ ul.currencies li .close:hover {
     opacity: 0;
     transition: all 0.25s;
 }
+
+
+/*----------------------------ADD CURRENCY LIST---------------------*/
 
 ul.add-currency-list {
     position: absolute;
@@ -232,8 +241,8 @@ ul.currencies::-webkit-scrollbar {
 }
 
 ul.currencies::-webkit-scrollbar-thumb {
-    background-color: rgb(29, 34, 36);
-    border-bottom: 1rem solid #222;
+    background-color: #4fb415;
+    border-bottom: 1rem solid #4fb415;
 }
 
 

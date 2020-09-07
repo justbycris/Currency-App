@@ -257,6 +257,7 @@ function currenciesListClick(event) {
             const newBaseCurrencyLI = currenciesList.querySelector(".currency");
             if (newBaseCurrencyLI) {
                 setNewBaseCurrency(newBaseCurrencyLI);
+                baseCurrencyAmount = Number(newBaseCurrencyLI.querySelector(".input input").nodeValue);
             }
         }
     }
@@ -308,7 +309,7 @@ function newCurrenciesListItem(currency) {
         `  <li class="currency ${currency.abbreviation===baseCurrency ? "base-currency" : ""}" id=${currency.abbreviation}>
         <img src=${currency.flagURL} class="flag" alt="Mexico flag." />
         <div class="info">
-            <p class="input"> <span class="currency-symbol">${currency.symbol}</span><input placeholder="0.0000" value=${inputValue} type="text"></p>
+            <p class="input"> <span class="currency-symbol">${currency.symbol}</span><input type="text" placeholder="0.0000" value=${inputValue} ></p>
             <p class="currency-name">${currency.abbreviation} - ${currency.name}</p>
             <p class="base-currency-rate">1 ${baseCurrency} = ${exchangeRate} ${currency.abbreviation} </p>
         </div>
