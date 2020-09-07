@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #172A3A;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -23,7 +23,7 @@ body {
     margin: 20px auto;
     position: relative;
     overflow-x: hidden;
-    -webkit-user-select: none;
+    user-select: none;
 }
 
 
@@ -53,12 +53,17 @@ body {
     padding: 0.75rem 2rem .75rem 0;
 }
 
+p {
+    font-size: calc(16 + 1vw);
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 /*------------------------CURRENCY LIST---------------------*/
 
 ul.currencies {
     height: calc(100vh - 40px - 100px - 40px - 57px);
-    background-color: #C7D6D5;
+    background-color: #e0e0e0;
     padding: 0 1.5rem 1rem 1.5rem;
     list-style: none;
     padding: 0 1.5rem 1rem 1.5rem;
@@ -66,7 +71,7 @@ ul.currencies {
 }
 
 ul.currencies li {
-    background-color: #666666;
+    background-color: #808080;
     border-radius: 5px;
     padding: 1rem 1rem .75rem 1rem;
     margin-bottom: 1rem;
@@ -78,7 +83,7 @@ ul.currencies li:last-child {
 }
 
 ul.currencies li.base-currency {
-    background-color: rgb(29, 34, 36);
+    background-color: #172A3A;
 }
 
 .flag {
@@ -138,14 +143,13 @@ ul.currencies li .close:hover {
 }
 
 .add-currency-btn {
-    background-color: #FE9E00;
+    background-color: #F09937;
     color: #fff;
     padding: 1rem;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-top: 3px solid #222;
     outline: none;
     width: 100%;
     cursor: pointer;
@@ -156,7 +160,7 @@ ul.currencies li .close:hover {
 }
 
 .add-currency-btn:hover {
-    background-color: #e08a00;
+    background-color: #cf8530;
 }
 
 .add-currency-btn.open {
@@ -189,7 +193,7 @@ ul.add-currency-list {
     position: absolute;
     width: 100%;
     height: calc(100vh - 40px - 100px - 55px);
-    bottom: 54px;
+    bottom: 51px;
     left: 0;
     background-color: #f1f1f1;
     color: #333;
@@ -220,12 +224,15 @@ ul.add-currency-list li span {
     font-weight: bold;
 }
 
+
+/*-----------SCROLLBAR---------*/
+
 ul.currencies::-webkit-scrollbar {
     width: 5px;
 }
 
 ul.currencies::-webkit-scrollbar-thumb {
-    background-color: #2d2d37;
+    background-color: rgb(29, 34, 36);
     border-bottom: 1rem solid #222;
 }
 
