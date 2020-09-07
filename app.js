@@ -274,6 +274,30 @@ function setNewBaseCurrency(newBaseCurrencyLI) {
     }); //31:11
 }
 
+//Change Base currency 
+currenciesList.addEventListener("input", currenciesListInputChange);
+
+function currenciesListInputChange(event) {
+    const isNewBaseCurrency = event.target.closest("li").id !== baseCurrency;
+    if (isNewBaseCurrency) {
+        currenciesList.querySelector(`#${baseCurrency}`).classList.remove("base-currency");
+        setNewBaseCurrency(event.target.closest("li"));
+    }
+    const newBaseCurrencyAmount = isNaN(event.target.value) ? 0 : Number(event.target.value);
+    if (baseCurrencyAmount !== newBaseCurrencyAmount || isNewBaseCurrency) {
+        baseCurrencyAmount = newBaseCurrencyAmount;
+        const baseCurrencyRate = currencies.find(currency => currency.abbreviation === baseCurrency).rate;
+        currenciesList.querySelectorAll(".currency").forEach(currencyLI => {
+            if (currencyLI.id !== baseCurrency) {
+                const currencyRate = currencies.find(currency => currency.abbreviation === currencyLI.id).rate;
+                const exchangeRate = currencyLI.id === baseCurrency ? 1 : (currencyRate / baseCurrencyRate).toFixed(4);
+                currencyLI.querySelector(".input input").value = exchangeRate * baseCurrencyAmount !== 0 ? (exchangeRate * baseCurrencyAmount).toFixed(4) : "";
+            }
+        });
+    }
+}
+
+//44:50
 
 //Auxiliary Functions 
 
