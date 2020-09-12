@@ -4,11 +4,13 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
+const dataURL = "https://api.exchangeratesapi.io/latest";
+
 const initiallyDisplayedCurrencies = ["USD", "EUR", "GBP", "JPY", "RUB"];
 let baseCurrency;
 let baseCurrencyAmount;
 
-const currencies = [{
+let currencies = [{
         name: "US Dollar",
         abbreviation: "USD",
         symbol: "\u0024",
@@ -309,6 +311,10 @@ function currenciesListKeyDown(event) {
     if (event.key === "Enter") event.target.blur();
 }
 
+function currenciesListKeyDown(event) {
+    if (event.key === "Enter") event.target.blur();
+}
+
 //Auxiliary Functions 
 
 function populateAddCurrencyList() {
@@ -321,6 +327,7 @@ function populateAddCurrencyList() {
     }
 }
 
+//Auxiliary Functions
 function populateCurrenciesList() {
     for (let i = 0; i < initiallyDisplayedCurrencies.length; i++) {
         const currency = currencies.find(c => c.abbreviation === initiallyDisplayedCurrencies[i]);
@@ -352,6 +359,15 @@ function newCurrenciesListItem(currency) {
     )
 }
 
-populateAddCurrencyList();
-
-populateCurrenciesList();
+fetch(dataURL)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        document.querySelector(".date").textContent = data.date.split("-").reverse().join("-");
+        data.rates["EUR"] = 1;
+        currencies = currencies.filter(currency => data.rates[currency.abbreviation]);
+        currencies.forEach(currency => currency.rate = data.rates[currency.abbreviation]);
+        populateAddCurrencyList();
+        populateCurrenciesList();
+    })
+    .catch(err => console.log(err));
