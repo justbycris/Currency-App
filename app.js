@@ -12,43 +12,41 @@ const currencies = [{
         name: "US Dollar",
         abbreviation: "USD",
         symbol: "\u0024",
-        flagURL: "https://img.icons8.com/color/48/000000/usa.png",
-        rate: 1.1325
+        flagURL: "https://img.icons8.com/color/48/000000/usa.png"
     },
     {
         name: "Euro",
         abbreviation: "EUR",
         symbol: "\u20AC",
-        flagURL: "https://img.icons8.com/color/48/000000/flag-of-europe.png",
-        rate: 1
+        flagURL: "https://img.icons8.com/color/48/000000/flag-of-europe.png"
     },
     {
         name: "Japanese Yen",
         abbreviation: "JPY",
         symbol: "\u00A5",
-        flagURL: "https://img.icons8.com/color/48/000000/japan.png",
-        rate: 125.5600
+        flagURL: "https://img.icons8.com/color/48/000000/japan.png"
+
     },
     {
         name: "British Pound",
         abbreviation: "GBP",
         symbol: "\u00A3",
-        flagURL: "https://img.icons8.com/color/48/000000/great-britain.png",
-        rate: 0.8726
+        flagURL: "https://img.icons8.com/color/48/000000/great-britain.png"
+
     },
     {
         name: "Australian Dollar",
         abbreviation: "AUD",
         symbol: "\u0024",
-        flagURL: "https://img.icons8.com/color/48/000000/australia-flag--v1.png",
-        rate: 1.5923
+        flagURL: "https://img.icons8.com/color/48/000000/australia-flag--v1.png"
+
     },
     {
         name: "Canadian Dollar",
         abbreviation: "CAD",
         symbol: "\u0024",
-        flagURL: "https://img.icons8.com/color/48/000000/canada.png",
-        rate: 1.4976
+        flagURL: "https://img.icons8.com/color/48/000000/canada.png"
+
     },
     {
         name: "Swiss Franc",
@@ -117,8 +115,8 @@ const currencies = [{
         name: "Russian Ruble",
         abbreviation: "RUB",
         symbol: "\u20BD",
-        flagURL: "https://img.icons8.com/color/48/000000/russian-federation.png",
-        rate: 74.1694
+        flagURL: "https://img.icons8.com/color/48/000000/russian-federation.png"
+
     },
     {
         name: "Indian Rupee",
@@ -297,7 +295,19 @@ function currenciesListInputChange(event) {
     }
 }
 
-//44:50
+currenciesList.addEventListener("focusout", currenciesListFocusOut);
+
+function currenciesListFocusOut(event) {
+    const inputValue = event.target.value;
+    if (isNaN(inputValue) || Number(inputValue) === 0) event.target.value = "";
+    else event.target.value = Number(inputValue).toFixed(4);
+}
+
+currenciesList.addEventListener("keydown", currenciesListKeyDown);
+
+function currenciesListKeyDown(event) {
+    if (event.key === "Enter") event.target.blur();
+}
 
 //Auxiliary Functions 
 
